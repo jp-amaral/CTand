@@ -60,19 +60,22 @@ function Home(props) {
 
     return (
         <div className="Home">
-            {!openAd && <Navbar link="buyacar" loggedIn= {props.loggedIn}/>}
+            <Navbar link="buyacar" loggedIn= {props.loggedIn}/> 
+            <div className="Home-content">
+                {!openAd &&  <input  className="searchInput" type={'text'} placeholder={'Search...'} onChange={(event) => setSearchTerm(event.target.value)}/>}
 
-            {!openAd && <input  className="searchInput" type={'text'} placeholder={'Search...'} onChange={(event) => setSearchTerm(event.target.value)}/>}
-
-            <AnimatePresence>
-            {openAd && <motion.div><CarAd closeAd={setOpenAd} visible={setVisibility} opacity={setOpacity} transition={setTransition} carObject={carObject}/></motion.div>}
-            </AnimatePresence>
-
-            <motion.div className="cars" style={{visibility:visibility, opacity:opacity, transition:transition}}>
                 <AnimatePresence>
-                {listCars}
+                {openAd && <motion.div><CarAd closeAd={setOpenAd} visible={setVisibility} opacity={setOpacity} transition={setTransition} carObject={carObject} loggedIn={props.loggedIn}/></motion.div>}
                 </AnimatePresence>
-            </motion.div>
+
+                {!openAd && <motion.div animate={{opacity : 1, y:0}} initial={{opacity:0, y:2}} exit={{opacity:0, y:10}} transition={{ duration:0.3}} className="divider"></motion.div>}
+
+                <motion.div className="cars" style={{visibility:visibility, opacity:opacity, transition:transition}}>
+                    <AnimatePresence>
+                    {listCars}
+                    </AnimatePresence>
+                </motion.div>
+            </div>
         </div>
     );
 }

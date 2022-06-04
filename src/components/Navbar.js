@@ -36,8 +36,8 @@ function Navbar(props){
 
 
     return(
-        <nav>
-                <Container className='navbar'>
+        <div className='navbar-div'>
+                <div className='navbar'>
                     <Link to='/' className='ctand'> CTand</Link>
                     <nav className='nav-links'>
                         <Link to='/' className='buyacar' style={{textShadow:buyShadow}}> Buy a car</Link>
@@ -46,9 +46,9 @@ function Navbar(props){
                             <Icon icon="akar-icons:person" hFlip={true} style={{boxShadow:profileShadow}}/>
                         </Link>
                     </nav>
-                </Container>
+                </div>
 
-        </nav>
+        </div>
     )
 }
 

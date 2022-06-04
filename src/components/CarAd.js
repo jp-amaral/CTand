@@ -3,8 +3,9 @@ import {useEffect, useCallback, useState} from 'react'
 import './CarAd.css'
 import { Icon } from '@iconify/react';
 import {motion, AnimatePresence} from 'framer-motion'
+import Navbar from './Navbar';
 
-function CarAd({closeAd, visible, opacity, transition, carObject}) {
+function CarAd({closeAd, visible, opacity, transition, carObject, loggedIn}) {
 
     const escFunction = useCallback((event) => {
         if (event.keyCode === 27) {
@@ -23,13 +24,6 @@ function CarAd({closeAd, visible, opacity, transition, carObject}) {
     };
     }, [escFunction]);
 
-    const[openReview, setOpenReview] = useState(false);
-
-    const reviewButton = () => {
-        console.log("reviewButton");
-        setOpenReview(true);
-    }
-
 
     return (
         <motion.div 
@@ -38,18 +32,19 @@ function CarAd({closeAd, visible, opacity, transition, carObject}) {
         exit={{ x:-2000}}
         transition={{ type: "spring", stiffness: 380, damping: 30}}
         
-        className='CarAd-bg'>
-            <button className='backButton' onClick={() => {closeAd(false); visible('visible');opacity('1'); transition('visibility 0.3s linear,opacity 0.3s linear') }}>
-                <Icon icon="akar-icons:arrow-left" />
-            </button>
+        className='CarAd'>
 
+            {/* <Navbar link="buyacar" loggedIn= {loggedIn}/> */}
+
+            <button className='backButton' onClick={() => {closeAd(false); visible('visible');opacity('1'); transition('visibility 0.3s linear,opacity 0.3s linear') }}>
+                <Icon icon="akar-icons:arrow-left"/>
+            </button>
             <div className='left-container'>
                 <div className='overview'>
                     <img className="carAd-image" src={require('../images/'+carObject.imagem)}/>
                     <h1 className='car-name'>{carObject.marca + " " + carObject.modelo}</h1>
                 </div>
                 <div className='car-info'>
-                    <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Evaluation:</em> 5 star</p>
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Kms:</em> {carObject.kms} km</p>
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Price:</em> {carObject.preco} €</p>
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Year:</em> {carObject.ano}</p>
@@ -58,7 +53,10 @@ function CarAd({closeAd, visible, opacity, transition, carObject}) {
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Horsepower:</em> 120cv</p>
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Consumption:</em> 5,9L/100km</p>
                 </div>
-                <button className='reviewsButton' onClick={reviewButton}>Reviews<Icon icon="entypo:popup" className='popupBtn'/></button>
+                <div className='agent-info'>
+                    <p><em style={{fontStyle:'normal', fontWeight:'600'}}>Email:</em> agent_email@gmail.com</p>
+                    <p><em style={{fontStyle:'normal', fontWeight:'600'}}>Phone:</em> 912345678</p>
+                </div>
             </div>
             <div className='middle-container'>
                 <div className='car-description'>
