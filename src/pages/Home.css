@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Saira+Stencil+One&display=swap');
+
+.Home{
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ebebeb;
+    padding-bottom: 2vh;
+    border-style: solid;
+    border: 1px solid #ebebeb;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.Home::-webkit-scrollbar {
+    display: none;
+}
+
+.cars{
+    margin-top: 24vh;
+    bottom: 10px;
+    padding: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-column-gap: 5rem;
+    grid-row-gap: 3rem;
+    justify-items: center;
+}
+.car{
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.car:hover{
+    cursor: pointer;
+    /* transform scale (1.05) in 0.5 seconds */
+    transform: scale(1.05);
+    transition: transform 0.4s ease-in-out;
+}
+
+.searchInput{
+    font-family: 'Roboto Mono';
+    font-weight: 300;
+    width: 30vw;
+    height: 60px;
+    padding-left: 20px;
+    background:transparent;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    font-size: 30px;
+    position:absolute;
+    top:14vh;
+    left: 61vw;
+    transform: scale(1);
+    transition: transform 0.4s ease-in-out;
+    color:#646464;
+}
+
+.searchInput:hover{
+    transform: scale(1.05);
+    transition: transform 0.4s ease-in-out;
+    outline: none;
+    color:#646464;
+}
+
+.searchInput:focus{
+    outline: none;
+    color:#646464;
+}
+.Comments{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:1em;
+    margin-top: 24vh;
+    margin-left:6%;
+    margin-right:6%;
+  }
+  
+  .Comments > div{
+    background: #bdbdbd;
+    padding: 1em;
+    margin-top: 24px;
+    border-radius: 2vh;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.211);
+  }
+  
+  .Comments > div:nth-child(odd){
+    background: #dddddd;
+  }
+
+.tabs{
+    display: flex;
+    position: absolute;
+    position:absolute;
+    font-family: 'Roboto Mono';
+    font-weight: 400;
+    font-size: 1.4rem;
+    
+    top:14vh;
+    left: 6.5vw;
+    width:fit-content;
+    border-radius: 2vh;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.211);
+    background-color: #ffffff;
+    
+}
+
+.activeCars{
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+.activeCars:hover{
+    cursor: pointer;
+    transform: scale(1.06);
+    transition: all 0.3s ease-in-out;
+}
+  .activeReviews{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.activeReviews:hover{
+    cursor: pointer;
+    transform: scale(1.06);
+    transition: all 0.3s ease-in-out;
+}
