@@ -14,7 +14,7 @@ function Login ({loggedIn, setLoggedIn}){
 
         if(document.getElementById('username').value === "admin" && document.getElementById('password').value === "admin"){
             e.preventDefault();
-            setLoggedIn(true);
+            // setLoggedIn(true);
             // redirect to /profile using Navigate 
             navigate(`/profile`);
 
@@ -25,6 +25,8 @@ function Login ({loggedIn, setLoggedIn}){
     const handleRegister = (e) => {
         navigate(`/register`);
     }
+
+
 
 
     var color_var = "#FFFFFF";
@@ -40,7 +42,7 @@ function Login ({loggedIn, setLoggedIn}){
                     <input type="password" className="form__field2" placeholder="" name="password" id='password' required />
                     <label className="form__label2"><Icon icon="carbon:password" color="#640064" />   Pass</label>
                     <div className="label_btn">
-                        <div className="btn_login_div" onClick={handleLogin}><div className= "btn_login" style={{color:color_var}}>login</div></div>
+                        <div className="btn_login_div" onClick={handleLogin}><div className= "btn_login" style={{color:color_var}}>Login</div></div>
                         <div className="btn_login_div" onClick={handleRegister}><div className= "btn_login" style={{color:color_var}}>Register</div></div>
                     </div>
                 </div>
