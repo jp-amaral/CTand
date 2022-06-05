@@ -17,9 +17,9 @@
 }
 
 .cars{
-    position: relative;
+    position: absolute;
     width: 91.6%;
-    height: 73vh;
+    height: 72.8vh;
     top:23vh;
     padding: 80px;
     padding-top: 4vh;
@@ -45,6 +45,55 @@
     /* transform scale (1.05) in 0.5 seconds */
     transform: scale(1.05);
     transition: transform 0.4s ease-in-out;
+}
+
+.selects{
+    display: inline-flex;
+    padding-left: 7vw;
+}
+
+.selectYear{
+    position:absolute;
+    top:15vh;
+    position: fixed;
+    width: 130px;
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    margin-right: 30px;
+}
+
+.selectPrice{
+    position:relative;
+    top:15vh;
+    position: fixed;
+    width: 130px;
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    margin-right: 90px;
+}
+
+.selectKms{
+    position:relative;
+    top:15vh;
+    position: fixed;
+    width: 130px;
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
 }
 
 .searchInput{

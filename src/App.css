@@ -13,3 +13,21 @@
 .App::-webkit-scrollbar {
   display: none;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #640064;
+  border-radius: 10px;
+}

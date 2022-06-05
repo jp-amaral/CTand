@@ -7,8 +7,6 @@ import { Icon } from '@iconify/react';
 
 function Navbar(props){
 
-    console.log(props);
-
     const [logged, setLogged] = React.useState('/login');
 
     useEffect(() => {
