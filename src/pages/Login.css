@@ -1,13 +1,13 @@
-.loginpage{
+.loginpage1{
     text-decoration: none;
 }
-.btn_login{
+.btn_login1{
     position: relative;
 
     padding-left: 5vh;
     padding-right: 5vh;
 }
-.btn_register{
+.btn_register1{
     position: relative;
     text-decoration: none;
     padding-left: 7.5vh;
@@ -15,22 +15,22 @@
     
 }
 
-.left-login{
+.left-login1{
     position: absolute;
     left: 10vw;
-    top: 30vh;
+    top: 15vh;
 
 }
-.centered-login{
+.centered-login1{
     position: absolute;
     text-align: center;
     align-items: center;
     justify-content: center;
     left: 120vh;
-    top: 30vh;
+    top: 40vh;
 }
-.buysell{
-    margin-left: 10%;
+.buysell1{
+    margin-left: 0%
 }
 
 h1{
@@ -44,7 +44,7 @@ h1{
     text-align: center;
     color: #444444;
 }
-.label_btn{
+.label_btn1{
     /* position elements horizontally */
     display: flex;
     align-items: center;
@@ -53,7 +53,7 @@ h1{
     margin: 10vh 0;
 
 }
-.btn_login_div{
+.btn_login_div1{
     width: 40%;
     padding: 8px 2px;
     margin-right: 10%;
@@ -64,12 +64,12 @@ h1{
     color: white;
     text-align: center;
 }
-.btn_login_div:hover{
+.btn_login_div1:hover{
     background-color: #8d6091;
     cursor: pointer;
 }
 
-.btn_register_div{
+.btn_register_div1{
     width: 40%;
     padding: 8px 2px;
     margin-left: 10%;
@@ -80,7 +80,7 @@ h1{
     color: white;
     
 }
-.btn_register_div:hover{
+.btn_register_div1:hover{
     background-color: #28615e;
     cursor: pointer;
 }
@@ -91,6 +91,7 @@ h1{
     border-image: linear-gradient(to right, #d540f3,#b917be);
     border-image-slice: 1;
 }
+
 .form__field1 {
     font-family: inherit;
     width: 100%;

@@ -31,27 +31,27 @@ function Login ({loggedIn, setLoggedIn}){
 
     var color_var = "#FFFFFF";
     return (
-        <div className="loginpage">
+        <div className="loginpage1">
              <Navbar link="login" loggedIn={loggedIn}/> 
             <div id="split_left">
-                <div className="left-login">
-                    <h1 className="logintitle">Login</h1>
+                <div className="left-login1">
+                    <h1 className="logintitle1">Login</h1>
                     <input type="input" className="form__field1" placeholder="" name="username" id='username' required />
                     <label className="form__label1"><Icon icon="ant-design:user-outlined" color="#640064" />   User</label>
 
                     <input type="password" className="form__field2" placeholder="" name="password" id='password' required />
                     <label className="form__label2"><Icon icon="carbon:password" color="#640064" />   Pass</label>
-                    <div className="label_btn">
-                        <div className="btn_login_div" onClick={handleLogin}><div className= "btn_login" style={{color:color_var}}>Login</div></div>
-                        <div className="btn_login_div" onClick={handleRegister}><div className= "btn_login" style={{color:color_var}}>Register</div></div>
+                    <div className="label_btn1">
+                        <div className="btn_login_div1" onClick={handleLogin}><div className= "btn_login" style={{color:color_var}}>Login</div></div>
+                        <div className="btn_login_div1" onClick={handleRegister}><div className= "btn_login" style={{color:color_var}}>Register</div></div>
                     </div>
                 </div>
             </div>
             
-            <div id="split_right">
-                <div className="centered-login">
+            <div id="split_right1">
+                <div className="centered-login1">
                     <Icon icon="ion:car-sport-outline" color="#640064" width="260" />
-                    <h1 className="buysell">Buy and Sell Cars</h1>
+                    <h1 className="buysell1">Buy and Sell Cars</h1>
                 </div>
             </div>
         </div>

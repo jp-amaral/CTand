@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom';
-import Container from './Container';
 import React, { useEffect } from 'react';
 
 import  './Navbar.css';
@@ -39,9 +38,9 @@ function Navbar(props){
                     <Link to='/' className='ctand'> CTand</Link>
                     <nav className='nav-links'>
                         <Link to='/' className='buyacar' style={{textShadow:buyShadow}}> Buy a car</Link>
-                        <Link to='/sell-car' className='sellacar' style={{boxShadow:sellShadow}}> Sell a car</Link>
-                        <Link to={logged} className='icon' style={{boxShadow:'#646464'}}> 
-                            <Icon icon="akar-icons:person" hFlip={true} style={{boxShadow:profileShadow}}/>
+                        <Link to='/Sellcar' className='sellacar' style={{textShadow:sellShadow}}> Sell a car</Link>
+                        <Link to={logged} className='icon' style={{textShadow:'#646464'}}> 
+                            <Icon icon="akar-icons:person" hFlip={true} style={{textShadow:profileShadow}}/>
                         </Link>
                     </nav>
                 </div>
