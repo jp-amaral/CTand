@@ -299,7 +299,7 @@ function Home(props) {
             <div className="Home-content">
                 {!openAd &&  <input  className="searchInput" type={'text'} placeholder={'Search...'} onChange={(event) => setSearchTerm(event.target.value)}/>}
                 
-                <div className="selects">
+                {!openAd && <div className="selects">
                     <Select className="selectYear"
                     styles={customStylesYear}
                     options={years}
@@ -319,7 +319,7 @@ function Home(props) {
                     placeholder={'Kms'}
                     onChange={opt => setSelectedKms(opt.value)}
                     />
-                </div>
+                </div>}
 
 
                 <AnimatePresence>

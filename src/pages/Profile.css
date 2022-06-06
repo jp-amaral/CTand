@@ -251,9 +251,10 @@ color: #444444;
 .logout-button{
     position:absolute;  
     width: 7%;
-    left:25vw;
+    left:35.5vw;
     top:22vh;
-    background-color: #4FBFB9;
+    color: white;
+    background-color: #640064;
     border-radius: 14px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.211);
     padding: 10px 20px;
@@ -320,17 +321,16 @@ background: #dddddd;
 
 .carprof{
     position: absolute;
-    width: 91.6%;
-    height: 72.8vh;
+    width: 55%;
+    height: 51vh;
     top:10vh;
-    left: -4.5vw;
     padding: 80px;
     padding-top: 4vh;
     display: grid;
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
     justify-items: center;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: unset;
     margin-left:6%;
     margin-right:6%;
