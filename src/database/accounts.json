@@ -2,5 +2,6 @@
     "1":    {"name": "admin","password":"admin","acc_type": "admin"},
     "2":    {"name": "mod","password":"mod","acc_type": "mod"},
     "3":    {"name": "agent","password":"agent","acc_type": "agent"},
-    "4":    {"name": "user","password":"user","acc_type": "user"}
+    "4":    {"name": "seller","password":"seller","acc_type": "seller"},
+    "5":    {"name": "user","password":"user","acc_type": "user"}
 }
