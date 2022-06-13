@@ -1,4 +1,4 @@
-import {React,useState} from "react";
+import {React,useState, useEffect} from "react";
 import Navbar from "../components/Navbar";
 import './Sellcar.css';
 // import './login.css';
@@ -8,6 +8,17 @@ import {Link, useNavigate} from 'react-router-dom';
 
 
 function SellCar(props){
+
+    let navigate = useNavigate();
+
+    //run once when the component is mounted
+    useEffect(() => {
+        if(!props.loggedIn){
+            navigate('/login');
+        }
+    }
+    , [props.loggedIn]);
+
     const [openAd, setopenAd] = useState(false);
     const [state, setState]   = useState({image:null})
     
@@ -78,4 +89,4 @@ function SellCar(props){
     )
 }
 
-export default SellCar
+export default SellCar;
