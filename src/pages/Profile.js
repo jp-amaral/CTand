@@ -41,6 +41,14 @@ function Profile (props){
             setPhone("234123456")
             setDetails("I have a stand that sells cars since 1983")
             setDate("01/01/2021")
+        } else if (props.user === "admin"){
+            setUsername("Antónia Rocha");
+            setEmail("antoniarocha@ctand.com")
+            setPhone("234123456")
+            setDetails("Moderator")
+            setDate("28/09/2018")
+        } else {
+            navigate("/login");
         }
     }
     , [props.user]);
@@ -102,7 +110,7 @@ function Profile (props){
     return (
         <div className="profilepage">
             <Navbar link="profile" loggedIn={props.loggedIn}/>
-            <div className="profile">
+            <div className="profile" style={{left : props.user !=="admin"? '20vw' : '38vw'}}>
                 <img src={fotoperfil} className="fotoperfil"/>
                 <h2 className="dados1">{username}</h2>
                 <h2 className="dados2">Joined {date}</h2>
@@ -111,15 +119,15 @@ function Profile (props){
                 <h2 className="dados5">{details}</h2>
 
             </div>
-            <div className="mycars">
+            {props.user !=="admin" && <div className="mycars">
                 <h1 className="myselcars">My selling cars</h1>
                 <motion.div className="carprof" style={{visibility:visibility, opacity:opacity, transition:transition}}>
                     {props.user==="seller" && <AnimatePresence>
                     {listCars}
                     </AnimatePresence>}
                 </motion.div>
-            </div>
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
+            </div>}
+            <button className="logout-button" onClick={handleLogout} style={{left : props.user !=="admin"? '35.5vw' : '53.5vw'}} >Logout</button>
         </div>
         
 

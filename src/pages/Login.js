@@ -34,6 +34,16 @@ function Login ({loggedIn, setLoggedIn, setUser}) {
             setUser("agent");
             setLoggedIn(true);
             navigate(`/agent`);
+        } else if (document.getElementById('username').value === "admin" && document.getElementById('password').value === "admin"){
+            e.preventDefault();
+            // setLoggedIn(true);
+            // redirect to /profile using Navigate 
+            setUser("admin");
+            setLoggedIn(true);
+            navigate(`/`);
+        } else {
+            e.preventDefault();
+            alert("Invalid username or password");
         }
         
     }

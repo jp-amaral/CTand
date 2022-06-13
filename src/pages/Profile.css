@@ -1,16 +1,18 @@
 
 
 /* .profilepage{
-    overflow: hidden;
-    overflow-y: hidden;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 } */
 
 .profile{
-    position: absolute;
+    position: relative;
     width: 24vw;
     height: 73vh;
     left: 20vw;
     top: 20vh;
+   
 
     background: #ffffff;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
