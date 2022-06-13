@@ -23,11 +23,11 @@ function Navbar(props){
 
     if (props.link === "buyacar"){
         buyShadow = "0px 0px 5px #FFFFFF, 0px 0px 10px #FFFFFF, 0px 0px 15px #FFFFFF, 0px 0px 20px #FFFFFF";
-    } else if (props.link === "sellacar"){
+    } else if (props.link === "sellcar"){
         sellShadow = "0px 0px 5px #FFFFFF, 0px 0px 10px #FFFFFF, 0px 0px 15px #FFFFFF, 0px 0px 20px #FFFFFF";
-    } else if (props.link === "profile"){
-        profileShadow = "0px 0px 5px #FFFFFF, 0px 0px 10px #FFFFFF, 0px 0px 15px #FFFFFF, 0px 0px 20px #FFFFFF";
     } else if (props.link === "login"){
+        profileShadow = "0px 0px 5px #FFFFFF, 0px 0px 10px #FFFFFF, 0px 0px 15px #FFFFFF, 0px 0px 20px #FFFFFF";
+    } else if (props.link === "profile"){
         profileShadow = "0px 0px 5px #FFFFFF, 0px 0px 10px #FFFFFF, 0px 0px 15px #FFFFFF, 0px 0px 20px #FFFFFF";
     }
 
