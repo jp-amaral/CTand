@@ -4,7 +4,7 @@ import './Sellcar.css';
 // import './login.css';
 // import './register.css';
 import { Icon } from '@iconify/react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 
 class SellCar extends React.Component {
@@ -37,6 +37,7 @@ class SellCar extends React.Component {
   };
 
   render() {
+
     return (
       <div>
           <Navbar link="sellcar" loggedIn={this.props.loggedIn}/>

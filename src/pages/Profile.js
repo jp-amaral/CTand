@@ -10,6 +10,42 @@ import {motion, AnimatePresence} from 'framer-motion';
 
 function Profile (props){
 
+    //run this code when the component is mounted
+    useEffect(() => {
+        // console.log(props.user);
+        if(props.user === ""){
+            navigate("/login");
+        } else if (props.user === "agent"){
+            navigate("/agent");
+        }
+    }
+    , [props.user]);
+
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [details, setDetails ] = useState("");
+    const [date, setDate] = useState("");
+
+    //run this code when the component is mounted
+    useEffect(() => {
+        if (props.user === "user"){
+            setUsername("João Lemos");
+            setEmail("joaolemos@email.com")
+            setPhone("234123456")
+            setDetails("Im a musician and I love to play guitar")
+            setDate("01/01/2020")
+        } else if (props.user === "seller"){
+            setUsername("Bruno Amaral");
+            setEmail("brunoamaral@email.com")
+            setPhone("234123456")
+            setDetails("I have a stand that sells cars since 1983")
+            setDate("01/01/2021")
+        }
+    }
+    , [props.user]);
+
+
     let navigate = useNavigate();
     const [apagar,setapagar] = React.useState("visible");
     const [apagar2,setapagar2] = React.useState("visible");
@@ -68,19 +104,19 @@ function Profile (props){
             <Navbar link="profile" loggedIn={props.loggedIn}/>
             <div className="profile">
                 <img src={fotoperfil} className="fotoperfil"/>
-                <h2 className="dados1">Stand Tulia</h2>
-                <h2 className="dados2">Joined 20/03/2021</h2>
-                <h2 className="dados3">Stand.Tulia@gmail.com</h2>
-                <h2 className="dados4">235649486</h2>
-                <h2 className="dados5">Selling nice and cheap cars since 1988</h2>
+                <h2 className="dados1">{username}</h2>
+                <h2 className="dados2">Joined {date}</h2>
+                <h2 className="dados3">{email}</h2>
+                <h2 className="dados4">{phone}</h2>
+                <h2 className="dados5">{details}</h2>
 
             </div>
             <div className="mycars">
                 <h1 className="myselcars">My selling cars</h1>
                 <motion.div className="carprof" style={{visibility:visibility, opacity:opacity, transition:transition}}>
-                    <AnimatePresence>
+                    {props.user==="seller" && <AnimatePresence>
                     {listCars}
-                    </AnimatePresence>
+                    </AnimatePresence>}
                 </motion.div>
             </div>
             <button className="logout-button" onClick={handleLogout}>Logout</button>

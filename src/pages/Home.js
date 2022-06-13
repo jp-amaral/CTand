@@ -7,8 +7,19 @@ import Navbar from "../components/Navbar";
 import CarAd from "../components/CarAd";
 import {motion, AnimatePresence} from 'framer-motion';
 import Select from 'react-select';
+import { useNavigate } from "react-router-dom";
 
 function Home(props) {
+
+    let navigate = useNavigate();
+
+    //run this code when the component is mounted
+    useEffect(() => {
+        if (props.user === "agent"){
+            navigate("/agent");
+        }
+    }
+    , [props.user]);
 
     const years = [
         { label: 'Ano', value: 'Year' },

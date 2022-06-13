@@ -6,21 +6,36 @@ import { Icon } from '@iconify/react';
 
 
 
-function Login ({loggedIn, setLoggedIn}){
+function Login ({loggedIn, setLoggedIn, setUser}) {
 
     let navigate = useNavigate();
 
     const handleLogin = (e) => {
 
-        if(document.getElementById('username').value === "admin" && document.getElementById('password').value === "admin"){
+        if(document.getElementById('username').value === "user" && document.getElementById('password').value === "user"){
             e.preventDefault();
             // setLoggedIn(true);
             // redirect to /profile using Navigate 
+            setUser("user");
+            setLoggedIn(true);
             navigate(`/profile`);
 
-        } else {
-            alert("Invalid username or password");
+        } else if (document.getElementById('username').value === "seller" && document.getElementById('password').value === "seller"){
+            e.preventDefault();
+            // setLoggedIn(true);
+            // redirect to /profile using Navigate 
+            setUser("seller");
+            setLoggedIn(true);
+            navigate(`/profile`);
+        } else if (document.getElementById('username').value === "agent" && document.getElementById('password').value === "agent"){
+            e.preventDefault();
+            // setLoggedIn(true);
+            // redirect to /profile using Navigate 
+            setUser("agent");
+            setLoggedIn(true);
+            navigate(`/agent`);
         }
+        
     }
     const handleRegister = (e) => {
         navigate(`/register`);
