@@ -321,7 +321,6 @@ function Home(props) {
                     />
                 </div>}
 
-
                 <AnimatePresence>
                 {openAd && <motion.div><CarAd closeAd={setOpenAd} visible={setVisibility} opacity={setOpacity} transition={setTransition} carObject={carObject} loggedIn={props.loggedIn}/></motion.div>}
                 </AnimatePresence>
