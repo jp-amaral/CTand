@@ -42,7 +42,7 @@ function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
       // implement log out function plssss
       console.log("logout");
       setUser("");
-      setLoggedIn(true);
+      setLoggedIn(false);
       navigate('/');
     }
 
