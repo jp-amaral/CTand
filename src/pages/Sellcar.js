@@ -37,7 +37,7 @@ function SellCar(props){
       <div>
           <Navbar link="sellcar" loggedIn={props.loggedIn}/>
           
-            <div id="split_left">
+            {props.user !== "admin" && <div id="split_left">
                 <div className="left">
                     <h1>Sell a car</h1>
                     <input type="input" className="form__field1" placeholder="" name="brand" id='brand' required />
@@ -67,9 +67,9 @@ function SellCar(props){
                     <textarea  type="input" className="form__field15" placeholder="" name="description" id='description' required  cols="40" rows="5"></textarea>
                     <label for="description" className="form__label15">Description</label>
                 </div>
-            </div>
+            </div>}
             
-            <div id="split_right">
+            {props.user !== "admin" && <div id="split_right">
                 <div className="centered">
                   <div className="iconphoto" >
                     {!openAd && <Icon icon="bytesize:photo" color="#640064" height="100%"/>} 
@@ -83,7 +83,13 @@ function SellCar(props){
                   </div>
                   <div className="btn_sub_div"><Link to='/profile' className= "btn_sub" style={{color:"#FFFFFF"}}>Submit</Link></div>
                 </div>
-            </div>
+            </div>}
+
+            {props.user === "admin" &&
+              <div>
+                <h1 style={{position:'absolute', left:'10vw', top:'20vh'}}>You have to switch accounts to sell a car</h1>
+              </div>
+            }
           
       </div>
     )
