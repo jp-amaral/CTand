@@ -14,7 +14,7 @@
     top: 20vh;
    
 
-    background: #ffffff;
+    background: #faefff;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
     margin: 0;
@@ -27,33 +27,19 @@
     left: 55vw;
     top: 20vh;
 
-    background: #ffffff;
+    background: #faefff;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
     margin: 0;
 
 }
 
-.myreviews{
-    position: absolute;
-    left: 64vw;
-    top: 20vh;
-    overflow-y:scroll;
-    display: inline-block;
-
-    background: #ffffff;
-    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-    margin: 0;
-
-}
 
 .dados1{
     position: absolute;
     width: 359px;
     right: 3vw;
-    top: 270px;
+    top: 300px;
 
     font-family: 'Roboto Mono';
     font-style: normal;
@@ -70,7 +56,7 @@
     position: absolute;
     width: 359px;
     right: 3vw;
-    top: 330px;
+    top: 360px;
 
     font-family: 'Roboto Mono';
     font-style: normal;
@@ -86,7 +72,7 @@
     position: absolute;
 width: 359px;
 right: 3vw;
-top: 390px;
+top: 420px;
 
 font-family: 'Roboto Mono';
 font-style: normal;
@@ -102,7 +88,7 @@ color: #000000;
     position: absolute;
 width: 359px;
 right: 3vw;
-top: 450px;
+top: 480px;
 
 font-family: 'Roboto Mono';
 font-style: normal;
@@ -118,7 +104,7 @@ color: #000000;
     position: absolute;
 width: 359px;
 right: 3vw;
-top: 510px;
+top: 540px;
 
 font-family: 'Roboto Mono';
 font-style: normal;
@@ -147,17 +133,7 @@ text-align: center;
 color: #444444;
 }
 
-.myrev{
-    position: sticky;
-    padding-left: 11vw;
-    font-family: 'Roboto Mono';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.5vw;
-    line-height: 53px;
-    
-    color: #444444;
-    }
+
 
 .my1car{
     display: flex;
@@ -173,6 +149,7 @@ color: #444444;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
 }
+
 .car1{
     justify-content: center;
     align-items: center;
@@ -181,7 +158,7 @@ color: #444444;
     padding-bottom: 2vh;
     margin-top: 16px;
     border-radius: 20px;
-    }
+}
 
 .my2car{
     display: flex;
@@ -222,24 +199,7 @@ color: #444444;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.411);
 }
 
-.letrascarro1{
-    /* position: relative; */
-    width: 290px;
-    /* centrar a div em relação a outra div */
-    margin: auto;
-    justify-content: center;
-    
-    font-family: 'Roboto Mono';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 19px;
-    line-height: 25px;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 0;
-    
-    color: #000000;
-}
+
 
 .fotoperfil{
         position: absolute;
@@ -247,7 +207,6 @@ color: #444444;
         height: 200px;
         right: 7vw;
         top: 7vh;
-
 }
 
 .logout-button{
@@ -277,49 +236,6 @@ color: #444444;
 }
 
 
-.trash{
-    position: absolute;
-    width: 2vh;
-    height: 2vh;
-    right: 0vw;
-    top: 0.5vh;
-    align-items: center;
-    text-decoration: none;
-
-    position:absolute;  
-    border-radius: 14px;
-    padding: 10px 10px;
-    border:none;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-family: 'Roboto Mono', monospace;
-    transform: scale(1);
-}
-
-.CommentsProfile{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    grid-gap:0.5em;
-    margin-left:6%;
-    margin-right:6%;
-    width: 88%;
-  }
-
-.CommentsProfile > div{
-background: #bdbdbd;
-margin-top: 12px;
-/* margin-bottom: 12px; */
-border-radius: 2vh;
-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.211);
-}
-
-.CommentsProfile > div:nth-child(odd){
-background: #dddddd;
-}
 
 .carprof{
     position: absolute;

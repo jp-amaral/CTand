@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import CarDiv from "../components/CarDiv";
 import './Home.css';
-import Cars from "../database/cars.json"
+// import Cars from "../database/cars.json"
 import Navbar from "../components/Navbar";
 import CarAd from "../components/CarAd";
 import {motion, AnimatePresence} from 'framer-motion';
@@ -13,11 +13,21 @@ function Home(props) {
 
     let navigate = useNavigate();
 
+    //code to fetch the cars from localhost:5000/api/main_cars and store them in the state of cars
+    const [cars, setCars] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:5000/api/main_cars")
+        .then(res => res.json())
+        .then(data => setCars(data))
+        .catch(err => console.log(err));
+    }, []);
+
     //run this code when the component is mounted
     useEffect(() => {
         if (props.user === "agent"){
             navigate("/agent");
         }
+
     }
     , [props.user]);
 
@@ -255,8 +265,8 @@ function Home(props) {
 
 
     var array = [];
-    Object.keys(Cars).forEach(function (key) {
-        array.push(Cars[key]);
+    Object.keys(cars).forEach(function (key) {
+        array.push(cars[key]);
     });
 
     let filters = [searchTerm, selectedYear, selectedPrice, selectedKms];

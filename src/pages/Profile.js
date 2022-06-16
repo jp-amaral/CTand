@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import'./Profile.css'
 import CarDiv from "../components/CarDiv";
-import Cars from "../database/cars1.json"
-import fotoperfil from '../images/fotoperfil.png'  
+import seller_img from '../images/seller.png'  
+import buyer_img from '../images/buyer.png'
+import moderator_img from '../images/moderator.png'
 import { useNavigate } from "react-router-dom";  
 import {motion, AnimatePresence} from 'framer-motion';
 
@@ -21,11 +22,20 @@ function Profile (props){
     }
     , [props.user]);
 
+    const [cars, setCars] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:5000/api/profile_cars")
+        .then(res => res.json())
+        .then(data => setCars(data))
+        .catch(err => console.log(err));
+    }, []);
+
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [details, setDetails ] = useState("");
     const [date, setDate] = useState("");
+    const [image, setImage] = useState("");
 
     //run this code when the component is mounted
     useEffect(() => {
@@ -35,18 +45,21 @@ function Profile (props){
             setPhone("234123456")
             setDetails("Im a musician and I love to play guitar")
             setDate("01/01/2020")
+            setImage(buyer_img)
         } else if (props.user === "seller"){
             setUsername("Bruno Amaral");
             setEmail("brunoamaral@email.com")
             setPhone("234123456")
             setDetails("I have a stand that sells cars since 1983")
             setDate("01/01/2021")
+            setImage(seller_img)
         } else if (props.user === "admin"){
             setUsername("Antónia Rocha");
             setEmail("antoniarocha@ctand.com")
             setPhone("234123456")
             setDetails("Moderator")
             setDate("28/09/2018")
+            setImage(moderator_img)
         } else {
             navigate("/login");
         }
@@ -91,8 +104,8 @@ function Profile (props){
     }
 
     var array = [];
-    Object.keys(Cars).forEach(function (key) {
-        array.push(Cars[key]);
+    Object.keys(cars).forEach(function (key) {
+        array.push(cars[key]);
     });
 
     var filteredCars = array;
@@ -111,7 +124,7 @@ function Profile (props){
         <div className="profilepage">
             <Navbar link="profile" loggedIn={props.loggedIn}/>
             <div className="profile" style={{left : props.user !=="admin"? '20vw' : '38vw'}}>
-                <img src={fotoperfil} className="fotoperfil"/>
+                <img src={image} className="fotoperfil"/>
                 <h2 className="dados1">{username}</h2>
                 <h2 className="dados2">Joined {date}</h2>
                 <h2 className="dados3">{email}</h2>

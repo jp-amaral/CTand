@@ -1,10 +1,9 @@
 // eslint-disable-next-line
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import CarDiv from "../components/CarDiv";
 import './Home.css';
 import './AgentPage.css'
 import {Link} from 'react-router-dom';
-import Cars from "../database/cars.json"
 import CarAd from "../components/CarAd";
 import {motion, AnimatePresence} from 'framer-motion';
 import { useNavigate } from "react-router-dom";
@@ -12,6 +11,14 @@ import { useNavigate } from "react-router-dom";
 function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
 
     let navigate = useNavigate();
+
+    const [cars, setCars] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:5000/api/agent_cars")
+        .then(res => res.json())
+        .then(data => setCars(data))
+        .catch(err => console.log(err));
+    }, []);
 
     //Car and ad related states
     const [openAd, setOpenAd] = useState(false);
@@ -47,8 +54,8 @@ function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
     }
 
     var array = [];
-    Object.keys(Cars).forEach(function (key) {
-        array.push(Cars[key]);
+    Object.keys(cars).forEach(function (key) {
+        array.push(cars[key]);
     });
 
     let filters = [searchTerm, selectedYear, selectedPrice, selectedKms];
@@ -57,7 +64,7 @@ function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
     //Cycle through filters and filter cars
     for (let i = 0; i < filters.length; i++) {
         if (i === 0 && filters[i] !== "") {
-            filteredCars = filteredCars.filter(car => (car.marca.toLowerCase()+car.modelo.toLowerCase()).includes(filters[i].toLowerCase()));
+            filteredCars = filteredCars.filter(car => (car.marca.toLowerCase()+ ' ' + car.modelo.toLowerCase()).includes(filters[i].toLowerCase()));
         } else if (i === 1 && filters[i] !== "Year") {
             filteredCars = filteredCars.filter(item => item.ano === filters[i]);
         } else if (i === 2 && filters[i][0] !== -1 && filters[i][1] !== -1) {
@@ -69,13 +76,20 @@ function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
 
     const listCars = filteredCars.map((item, key) =>
         <div className="car" onClick={() => divOnClick(item.marca, item.modelo, item.ano)} key={key}>
-           <CarDiv image={item.imagem} info= {<React.Fragment> {item.marca + " " + item.modelo} <br/> {item.ano} <br/> {item.kms + " km"} <br/> {item.preco + " €"}</React.Fragment>}/>
+            <CarDiv image={item.imagem} info= {
+                <React.Fragment> {item.marca + " " + item.modelo} <br/> {item.ano} <br/> {item.kms + " km"} <br/> {item.preco + " €"}
+                </React.Fragment>}
+            />
         </div>
     );
     
     return (
         <div className="Home">
-            <Link to='/agent' className='ctand'> CTand</Link>
+            <Link to='/agent' className='ctand' style={{width:'fit-content'}}>CTand - Agent</Link>
+            <div className="assigned-ads">
+                Assigned ads
+            </div>
+
             <div className="Home-content">
                 {!openAd &&  <input  className="searchInput" type={'text'} placeholder={'Search...'} onChange={(event) => setSearchTerm(event.target.value)}/>}
                 
@@ -93,7 +107,7 @@ function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
                 </motion.div>
             </div>
             <div  onClick={logout} className='btn'>
-                <h1 className='text' >Logout</h1>
+                <h1 className='text'>Logout</h1>
             </div>
         </div>
     );

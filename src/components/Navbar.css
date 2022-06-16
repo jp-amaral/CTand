@@ -78,19 +78,20 @@
     position: relative;
     width: 283.64px;
     height: 84px;
-    left: 38vh; 
+    left: 35vh; 
     
     font-family: 'Roboto Mono';
     font-style: normal;
     font-weight: 300;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 47px;
     display: flex;
     align-items: center;
-    text-align: center;
-    transition: 0.5s;
+    text-align: center; 
+    text-decoration: none;
+
     color: #ffffff;
-    margin: 0;
+    transition: 0.5s;
 }
 
 .icon:hover{

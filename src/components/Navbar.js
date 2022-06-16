@@ -39,9 +39,10 @@ function Navbar(props){
                     <nav className='nav-links'>
                         <Link to='/' className='buyacar' style={{textShadow:buyShadow}}> Buy a car</Link>
                         <Link to='/Sellcar' className='sellacar' style={{textShadow:sellShadow}}> Sell a car</Link>
-                        <Link to={logged} className='icon' style={{textShadow:'#646464'}}> 
-                            <Icon icon="akar-icons:person" hFlip={true} style={{textShadow:profileShadow}}/>
-                        </Link>
+                        <Link to={logged} className='icon' style={{textShadow:profileShadow}}> Profile</Link>
+                        {/* <Link to={logged} className='icon'> 
+                            <Icon icon="akar-icons:person" hFlip={true} style={{filter:'drop-shadow('+profileShadow+')'}}/>
+                        </Link> */}
                     </nav>
                 </div>
 

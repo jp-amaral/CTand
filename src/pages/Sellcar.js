@@ -21,7 +21,7 @@ function SellCar(props){
 
     const [openAd, setopenAd] = useState(false);
     const [state, setState]   = useState({image:null})
-    
+
     
     const onImageChange = event => {
         if (event.target.files && event.target.files[0]) {
@@ -32,6 +32,27 @@ function SellCar(props){
         setState({image: URL.createObjectURL(img)});
         }
     };
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const data = new FormData();
+        data.append('image', document.getElementById('image').files[0]);
+        data.append('brand', document.getElementById('brand').value);
+        data.append('model', document.getElementById('model').value);
+        data.append('year', document.getElementById('year').value);
+        data.append('price', document.getElementById('price').value);
+        data.append('description', document.getElementById('description').value);
+        data.append('fuel', document.getElementById('fuel').value);
+        data.append('horsepower', document.getElementById('horse_power').value);
+        data.append('kms' , document.getElementById('kms').value);
+
+        fetch('http://localhost:5000/api/sellcar', {
+            method: 'POST',
+            body: data,
+            mode: 'no-cors',
+        })
+    }
+
 
     return (
       <div>
@@ -49,8 +70,8 @@ function SellCar(props){
                     <input type="input" className="form__field3" placeholder="" name="kms" id='kms' required />
                     <label for="kms" className="form__label3">KMS</label>
 
-                    <input type="input" className="form__field4" placeholder="" name="priece" id='priece' required />
-                    <label for="priece" className="form__label4">Priece</label>
+                    <input type="input" className="form__field4" placeholder="" name="priece" id='price' required />
+                    <label for="priece" className="form__label4">Price</label>
 
                     <input type="input" className="form__field5" placeholder="" name="year" id='year' required />
                     <label for="year" className="form__label5">Year</label>
@@ -74,14 +95,14 @@ function SellCar(props){
                   <div className="iconphoto" >
                     {!openAd && <Icon icon="bytesize:photo" color="#640064" height="100%"/>} 
                   </div>
-                  <div className="div-upload" style={{backgroundColor: openAd? 'transparent' : '#FFFFFF'}}>
+                  <div className="div-upload" style={{backgroundColor: openAd? 'transparent' : 'transparent'}}>
                     <img className="upload-image" alt="" src={state.image} />
                   </div>
-                  <div className="space" style={{backgroundColor: openAd? 'transparent' : '#FFFFFF'}} ></div>
-                  <div className="upload_tbn" style={{backgroundColor: openAd? 'transparent' : '#FFFFFF'}}>
-                    <label className="file"><input type="file" name="myImage" onChange={onImageChange}/>Upload Photo</label>
+                  <div className="space" style={{backgroundColor: openAd? 'transparent' : 'transparent'}} ></div>
+                  <div className="upload_tbn" style={{backgroundColor: openAd? 'transparent' : 'transparent'}}>
+                    <label className="file"><input type="file" name="myImage"  id ="image" onChange={onImageChange} />Upload Photo</label>
                   </div>
-                  <div className="btn_sub_div"><Link to='/profile' className= "btn_sub" style={{color:"#FFFFFF"}}>Submit</Link></div>
+                  <div className="btn_sub_div"><input type="submit" className= "btn_sub" style={{color:"#FFFFFF"}} onClick={handleSubmit}/>Submit</div>
                 </div>
             </div>}
 

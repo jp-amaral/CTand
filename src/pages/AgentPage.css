@@ -28,4 +28,33 @@
     background: #FFFFFF;
     box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.assigned-ads{
+    position: absolute;
+    width: 15.7vw;
+    height: 7vh;
+    left: 0px;
+    top: 14vh;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 390;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    place-content: center;
+    color: white;
+    cursor: pointer;
+    /* border-style: solid; */
+    background-color: #640064;
+
 }
