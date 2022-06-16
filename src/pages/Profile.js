@@ -7,6 +7,7 @@ import buyer_img from '../images/buyer.png'
 import moderator_img from '../images/moderator.png'
 import { useNavigate } from "react-router-dom";  
 import {motion, AnimatePresence} from 'framer-motion';
+import CarAd from "../components/CarAd";
 
 
 function Profile (props){
@@ -68,8 +69,6 @@ function Profile (props){
 
 
     let navigate = useNavigate();
-    const [apagar,setapagar] = React.useState("visible");
-    const [apagar2,setapagar2] = React.useState("visible");
     var array = [];
 
     const handleLogout = (e) => {
@@ -78,15 +77,8 @@ function Profile (props){
         // redirect to /profile using Navigate 
         navigate(`/`);
     }
-    //funcao para colocar apagar a true
-    const handleApagar1 = () => {
-        setapagar("hidden");
-    }
-    const handleApagar2 = () => {
-        setapagar2("hidden");
-    }
+
     //Imprimir na console o valor de apagar
-    console.log(apagar);
     const [openAd, setOpenAd] = useState(false);
     const [carObject, setCarObject] = useState({});
     //Animation related states
@@ -96,11 +88,9 @@ function Profile (props){
 
     const divOnClick = (marca, modelo, year) => {
         setOpenAd(true);
-        setVisibility('hidden');
-        setOpacity('0');
-        setTransition('none')
         let car = array.find(item => item.marca === marca && item.modelo === modelo && item.ano === year)
         setCarObject(car);
+        console.log(car);
     }
 
     var array = [];
@@ -123,7 +113,7 @@ function Profile (props){
     return (
         <div className="profilepage">
             <Navbar link="profile" loggedIn={props.loggedIn}/>
-            <div className="profile" style={{left : props.user !=="admin"? '20vw' : '38vw'}}>
+            {!openAd && <div className="profile" style={{left : props.user !=="admin"? '20vw' : '38vw'}}>
                 <img src={image} className="fotoperfil"/>
                 <h2 className="dados1">{username}</h2>
                 <h2 className="dados2">Joined {date}</h2>
@@ -131,16 +121,22 @@ function Profile (props){
                 <h2 className="dados4">{phone}</h2>
                 <h2 className="dados5">{details}</h2>
 
-            </div>
-            {props.user !=="admin" && <div className="mycars">
+            </div>}
+
+            <AnimatePresence>
+                {openAd && <motion.div><CarAd closeAd={setOpenAd} carObject={carObject} loggedIn={props.loggedIn}/></motion.div>}
+            </AnimatePresence>
+
+            {props.user !=="admin" && !openAd && <div className="mycars">
                 <h1 className="myselcars">My selling cars</h1>
                 <motion.div className="carprof" style={{visibility:visibility, opacity:opacity, transition:transition}}>
                     {props.user==="seller" && <AnimatePresence>
                     {listCars}
                     </AnimatePresence>}
                 </motion.div>
+                {props.user !== "seller" && <h1 className="nocars">You don't have any cars for sale!</h1>}
             </div>}
-            <button className="logout-button" onClick={handleLogout} style={{left : props.user !=="admin"? '35.5vw' : '53.5vw'}} >Logout</button>
+            {!openAd && <button className="logout-button" onClick={handleLogout} style={{left : props.user !=="admin"? '35.5vw' : '53.5vw'}} >Logout</button>}
         </div>
         
 

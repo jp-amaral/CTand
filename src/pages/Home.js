@@ -275,7 +275,7 @@ function Home(props) {
     //Cycle through filters and filter cars
     for (let i = 0; i < filters.length; i++) {
         if (i === 0 && filters[i] !== "") {
-            filteredCars = filteredCars.filter(car => (car.marca.toLowerCase()+car.modelo.toLowerCase()).includes(filters[i].toLowerCase()));
+            filteredCars = filteredCars.filter(car => (car.marca.toLowerCase()+' '+car.modelo.toLowerCase()).includes(filters[i].toLowerCase()));
         } else if (i === 1 && filters[i] !== "Year") {
             filteredCars = filteredCars.filter(item => item.ano === filters[i]);
         } else if (i === 2 && filters[i][0] !== -1 && filters[i][1] !== -1) {

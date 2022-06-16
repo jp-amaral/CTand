@@ -5,7 +5,7 @@
     width: 98.8vw;
     height: 85vh;
     margin: 0;
-    background-color: #ebebeb;
+    background-color: transparent;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@
     width: 580px;
     height: 650px;
     border-radius: 2rem;
-    background-color: #F6F6F6;
+    background-color: #faefff;
     box-shadow: 5px 5px 10px #0000001a;
     display: flex;
     flex-direction: column;
@@ -91,7 +91,7 @@
     width: 480px;
     height: 650px;
     border-radius: 2rem;
-    background-color: #F6F6F6;
+    background-color: #faefff;
     box-shadow: 5px 5px 10px #0000001a;
     display: flex;
     flex-direction: column;
@@ -107,7 +107,7 @@
     width: 480px;
     height: 650px;
     border-radius: 2rem;
-    background-color: #F6F6F6;
+    background-color: #faefff;
     box-shadow: 5px 5px 10px #0000001a;
     display: flex;
     flex-direction: column;

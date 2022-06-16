@@ -50,7 +50,7 @@ function CarAd({closeAd, visible, opacity, transition, carObject, loggedIn}) {
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Year:</em> {carObject.ano}</p>
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Fuel:</em> Diesel (45L)</p>
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Engine:</em> 1995 cm3</p>
-                    <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Horsepower:</em> 120cv</p>
+                    <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Horsepower:</em> 150cv</p>
                     <p><em style={{fontStyle:'normal', fontWeight:'bold'}}>Consumption:</em> 5,9L/100km</p>
                 </div>
                 <div className='agent-info'>

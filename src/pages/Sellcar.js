@@ -50,6 +50,9 @@ function SellCar(props){
             method: 'POST',
             body: data,
             mode: 'no-cors',
+        }).then(res => {
+            console.log(res);
+            navigate('/profile');
         })
     }
 

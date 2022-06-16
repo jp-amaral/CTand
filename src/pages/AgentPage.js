@@ -86,9 +86,9 @@ function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
     return (
         <div className="Home">
             <Link to='/agent' className='ctand' style={{width:'fit-content'}}>CTand - Agent</Link>
-            <div className="assigned-ads">
+            {!openAd && <div className="assigned-ads">
                 Assigned ads
-            </div>
+            </div>}
 
             <div className="Home-content">
                 {!openAd &&  <input  className="searchInput" type={'text'} placeholder={'Search...'} onChange={(event) => setSearchTerm(event.target.value)}/>}
