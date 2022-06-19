@@ -4,8 +4,10 @@ import './CarAd.css'
 import { Icon } from '@iconify/react';
 import {motion, AnimatePresence} from 'framer-motion'
 import Navbar from './Navbar';
+import Buttest from '../pages/Buttest.js';
+import ButComp from '../pages/Butcomp.js';
 
-function CarAd({closeAd, visible, opacity, transition, carObject, loggedIn}) {
+function CarAd({closeAd, visible, opacity, transition, carObject}) {
 
     const escFunction = useCallback((event) => {
         if (event.keyCode === 27) {
@@ -24,7 +26,6 @@ function CarAd({closeAd, visible, opacity, transition, carObject, loggedIn}) {
     };
     }, [escFunction]);
 
-
     return (
         <motion.div 
         animate={{x:0}}
@@ -39,6 +40,7 @@ function CarAd({closeAd, visible, opacity, transition, carObject, loggedIn}) {
             <button className='backButton' onClick={() => {closeAd(false); visible('visible');opacity('1'); transition('visibility 0.3s linear,opacity 0.3s linear') }}>
                 <Icon icon="akar-icons:arrow-left"/>
             </button>
+            
             <div className='left-container'>
                 <div className='overview'>
                     <img className="carAd-image" src={require('../images/'+carObject.imagem)}/>
@@ -87,7 +89,8 @@ function CarAd({closeAd, visible, opacity, transition, carObject, loggedIn}) {
                     <img className="stand-image" src={require('../images/stand_location.png')}/>
                 </div>
             </div>
-            
+            <ButComp/>
+            <Buttest/>
         </motion.div>
     )
 }

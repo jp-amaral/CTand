@@ -18,7 +18,6 @@ function SellCar(props){
         }
     }
     , [props.loggedIn]);
-
     const [openAd, setopenAd] = useState(false);
     const [state, setState]   = useState({image:null})
 

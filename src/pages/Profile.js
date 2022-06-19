@@ -14,7 +14,7 @@ function Profile (props){
 
     //run this code when the component is mounted
     useEffect(() => {
-        // console.log(props.user);
+        console.log(props.user);
         if(props.user === ""){
             navigate("/login");
         } else if (props.user === "agent"){
