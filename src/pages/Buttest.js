@@ -4,7 +4,9 @@ import { Icon } from '@iconify/react';
 import {motion, AnimatePresence} from 'framer-motion'
 function Buttest(props) {
     const [show, setShow] = React.useState(false);
-
+    const [agent, setAgent] = React.useState(true);
+    const [client, setclient] = React.useState(false);
+    const [testvend,settestvend] = React.useState(false);
     const handleClick = () => 
     {
         setShow(!show);
@@ -14,9 +16,12 @@ function Buttest(props) {
     
   return (
     <motion.div className="butcomp" onClick={handleClick}>
-        <div className='test_drive' >
+        {!testvend&&<div className='test_drive' >
             <h1 className='testh1'>Test Drive</h1>
-        </div>
+        </div>}
+        {testvend&&<div className='Vendido' >
+            <h1 className='vendidoh1'>Vendido</h1>
+        </div>}
         {show && <div className='base'>
             <div className='seta_test' onClick={handleClick}>
                 <Icon icon="akar-icons:arrow-left"  height="25"/>

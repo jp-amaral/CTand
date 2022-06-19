@@ -9,7 +9,17 @@ background: #FFFFFF;
 box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.1);
 border-radius: 30px;
 }
+.Vendido{
+    position: absolute;
+width: 20vw;
+height: 5.4vh;
+left: 42vw;
+top: 1vh;
 
+background: #32da10;
+box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.1);
+border-radius: 30px;
+}
 .buy{
         position: absolute;
     width: 20vw;
@@ -41,7 +51,24 @@ cursor: pointer;
 color: #640064;
 /* border-style: solid; */
 }
-
+.vendidoh1{
+    position: absolute;
+    width: 19.7vw;
+    height: 4vh;
+    top: -1.4vh;
+    justify-content: center;
+    
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    /* border-style: solid; */
+}
 .buyh1{
     position: absolute;
     width: 19.7vw;

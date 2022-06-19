@@ -4,13 +4,17 @@ import { Icon } from '@iconify/react';
 import {motion, AnimatePresence} from 'framer-motion'
 function ButComp() {
     const [show, setShow] = React.useState(false);
+    const [compgera,setcompgera] = React.useState(true);
 
     const handleClick = () => setShow(!show);
   return (
     <motion.div className="butcomp" onClick={handleClick}>
-        <div className='buy' >
+        {compgera&&<div className='buy' >
             <h1 className='testh1'>Comprar</h1>
-        </div>
+        </div>}
+        {!compgera&&<div className='buy' >
+            <h1 className='testh1'>Gerar Fatura</h1>
+        </div>}
         {show && <div className='base'>
             <div className='seta_test' onClick={handleClick}>
                 <Icon icon="akar-icons:arrow-left"  height="25"/>

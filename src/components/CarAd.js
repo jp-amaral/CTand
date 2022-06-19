@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 import Buttest from '../pages/Buttest.js';
 import ButComp from '../pages/Butcomp.js';
 
+
 function CarAd({closeAd, visible, opacity, transition, carObject}) {
 
     const escFunction = useCallback((event) => {
