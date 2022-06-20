@@ -95,7 +95,7 @@ function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
                 
 
                 <AnimatePresence>
-                {openAd && <motion.div><CarAd closeAd={setOpenAd} visible={setVisibility} opacity={setOpacity} transition={setTransition} carObject={carObject} loggedIn={loggedIn}/></motion.div>}
+                {openAd && <motion.div><CarAd user={user} closeAd={setOpenAd} visible={setVisibility} opacity={setOpacity} transition={setTransition} carObject={carObject} loggedIn={loggedIn}/></motion.div>}
                 </AnimatePresence>
 
                 {!openAd && <motion.div animate={{opacity : 1, y:0}} initial={{opacity:0, y:2}} exit={{opacity:0, y:10}} transition={{ duration:0.3}} className="divider"></motion.div>}

@@ -16,6 +16,7 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
     const [test, setTest] = useState(false);
     const [buy , setBuy] = useState(false);
     const[reportAd, setReportAd] = useState(false);
+    const[bgcolor, setBgcolor] = useState("#fffff");
     const [firstButtonContent, setFirstButtonContent] = useState("");
     const [secondButtonContent, setSecondButtonContent] = useState("");
 
@@ -24,15 +25,19 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
         if (user === "user") {
             setFirstButtonContent("Test Drive");
             setSecondButtonContent("Buy");
+            setBgcolor("#fffff");
         } else if (user === "admin") {
             setFirstButtonContent("Delete seller account");
             setSecondButtonContent("Delete ad");
+            setBgcolor("#FF5D5D");
         } else if (user === "agent") {
             setFirstButtonContent("Car sold");
             setSecondButtonContent("Genterate invoice");
+            setBgcolor("#63FFBE");
         } else {
             setFirstButtonContent("Test Drive");
             setSecondButtonContent("Buy");
+            setBgcolor("#fffff");
         }
     }  , [user]);
 
@@ -138,15 +143,15 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
                 </div>
             </div>
             
-            <div onClick={onClickTest} className='firstButton'>{firstButtonContent}</div>
-            {test && <Buttest setTest={setTest}/>}
-            <div onClick={onClickBuy} className='secondButton'>{secondButtonContent}</div>
-            {buy && <ButComp setBuy={setBuy}/>}
+            <div onClick={onClickTest} className='firstButton' style={{backgroundColor:bgcolor, color: user==="admin"? '#ffffff' : ''}} >{firstButtonContent}</div>
+            {test && <Buttest setTest={setTest} user={user}/>}
+            <div onClick={onClickBuy} className='secondButton' style={{backgroundColor:bgcolor, color: user==="admin"? '#ffffff' : ''}}>{secondButtonContent}</div>
+            {buy && <ButComp setBuy={setBuy} user={user}/>}
 
             {/* {reportAd && <ReportAd setReportAd={setReportAd}/>} */}
             
         </motion.div>
     )
-}
+}   
 
 export default CarAd

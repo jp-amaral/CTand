@@ -13,19 +13,19 @@ function ButComp(props) {
             <div className='seta_test' onClick={() => props.setBuy(false)}>
                 <Icon icon="akar-icons:arrow-left"  height="25"/>
             </div>
-            <div className='contactar'>Contactar agente</div>
-                <div className='maisinfo'>Mensagem para agente: Antónia Rocha</div>
-                    <div className='linha1'></div>
+            <div className='contactar'>Contact agent</div>
+                <div className='maisinfo'>Message to agent: Antónia Rocha</div>
+                    {/* <div className='linha1'></div> */}
                         <div className='textocomprar'>
-                            Boa tarde, Tenho interesse em comprar este veiculo, por favor, contacte-me.
+                            Hello there, I am interested in buying this car, please contact me.
                         </div>
-                        <div className='enviadopor'>Enviado por: João Lemos</div>
+                        <div className='enviadopor'>Sent by: João Lemos</div>
                         <div className='email'>Email: joao.lemos@email.com</div>
-                        <div className='telefone'>Telefone: 913441442</div>
+                        <div className='telefone'>Phone: 913441442</div>
                         <div className='enviar'>
-                            <div className='enviartxt'>Enviar</div>
+                            <div className='enviartxt' onClick={()=> props.setBuy(false)}>Send</div>
                         </div>
-                <div className='linha2'></div>
+                {/* <div className='linha2'></div> */}
         </div>
     </motion.div>
   );

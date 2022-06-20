@@ -324,14 +324,14 @@ function Home(props) {
                     <Select className="selectYear"
                     styles={customStylesYear}
                     options={years}
-                    placeholder={'Ano'}
+                    placeholder={'Year'}
                     onChange={opt => setSelectedYear(opt.value)}
                     />
 
                     <Select className="selectPrice"
                     styles={customStylesPrice}
                     options={prices}
-                    placeholder={'Preço'}
+                    placeholder={'Price'}
                     onChange={opt => setSelectedPrice(opt.value)}
                     />
                     <Select className="selectKms"
