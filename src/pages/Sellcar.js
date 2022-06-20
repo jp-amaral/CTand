@@ -104,7 +104,7 @@ function SellCar(props){
                   <div className="upload_tbn" style={{backgroundColor: openAd? 'transparent' : 'transparent'}}>
                     <label className="file"><input type="file" name="myImage"  id ="image" onChange={onImageChange} />Upload Photo</label>
                   </div>
-                  <div className="btn_sub_div"><input type="submit" className= "btn_sub" style={{color:"#FFFFFF"}} onClick={handleSubmit}/>Submit</div>
+                  <div className="btn_sub_div"><input type="submit" className= "btn_sub" style={{color:"#FFFFFF"}} onClick={handleSubmit}/></div>
                 </div>
             </div>}
 
