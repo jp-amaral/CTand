@@ -8,7 +8,23 @@ import Buttest from '../pages/Buttest.js';
 import ButComp from '../pages/Butcomp.js';
 
 
-function CarAd({closeAd, visible, opacity, transition, carObject}) {
+function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
+
+    const [test, setTest] = useState(false);
+    const [firstButtonContent, setFirstButtonContent] = useState("");
+
+    useEffect(() => {
+        if (user === "user") {
+            setFirstButtonContent("Buy");
+        } else if (user === "admin") {
+            setFirstButtonContent("Delete seller account");
+        } else if (user === "agent") {
+            setFirstButtonContent("Car sold");
+        } else {
+            setFirstButtonContent("Buy");
+        }
+    }  , [user]);
+
 
     const escFunction = useCallback((event) => {
         if (event.keyCode === 27) {
@@ -18,6 +34,12 @@ function CarAd({closeAd, visible, opacity, transition, carObject}) {
           transition('visibility 0.3s linear,opacity 0.3s linear');
         }
       }, []);
+
+    //onclick function to setTest to true
+    const onClickTest = () => {
+        setTest(true);
+    }
+
 
     useEffect(() => {
     document.addEventListener("keydown", escFunction);
@@ -91,7 +113,9 @@ function CarAd({closeAd, visible, opacity, transition, carObject}) {
                 </div>
             </div>
             <ButComp/>
-            <Buttest/>
+            <div onClick={onClickTest} className='firstButton'>{firstButtonContent}</div>
+            {test && <Buttest setTest={setTest}/>}
+            
         </motion.div>
     )
 }
