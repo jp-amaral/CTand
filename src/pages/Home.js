@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import CarDiv from "../components/CarDiv";
 import './Home.css';
-// import Cars from "../database/cars.json"
 import Navbar from "../components/Navbar";
 import CarAd from "../components/CarAd";
 import {motion, AnimatePresence} from 'framer-motion';
@@ -12,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 function Home(props) {
 
     let navigate = useNavigate();
+    
 
     //code to fetch the cars from localhost:5000/api/main_cars and store them in the state of cars
     const [cars, setCars] = useState([]);
@@ -27,7 +27,7 @@ function Home(props) {
         if (props.user === "agent"){
             navigate("/agent");
         }
-
+        console.log("home: " + props.user)
     }
     , [props.user]);
 
@@ -343,7 +343,7 @@ function Home(props) {
                 </div>}
 
                 <AnimatePresence>
-                {openAd && <motion.div><CarAd  User={props.user} closeAd={setOpenAd} visible={setVisibility} opacity={setOpacity} transition={setTransition} carObject={carObject} loggedIn={props.loggedIn}/></motion.div>}
+                {openAd && <motion.div><CarAd  user={props.user} closeAd={setOpenAd} visible={setVisibility} opacity={setOpacity} transition={setTransition} carObject={carObject} loggedIn={props.loggedIn}/></motion.div>}
                 </AnimatePresence>
 
                 {!openAd && <motion.div animate={{opacity : 1, y:0}} initial={{opacity:0, y:2}} exit={{opacity:0, y:10}} transition={{ duration:0.3}} className="divider"></motion.div>}

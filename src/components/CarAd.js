@@ -14,6 +14,7 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
     const [firstButtonContent, setFirstButtonContent] = useState("");
 
     useEffect(() => {
+        console.log(user)
         if (user === "user") {
             setFirstButtonContent("Buy");
         } else if (user === "admin") {
