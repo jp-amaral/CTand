@@ -3,43 +3,33 @@ import './Buttest.css'
 import { Icon } from '@iconify/react';
 import {motion, AnimatePresence} from 'framer-motion'
 function Buttest(props) {
-    const [show, setShow] = React.useState(false);
+    
     const [agent, setAgent] = React.useState(true);
     const [client, setclient] = React.useState(false);
-    const [testvend,settestvend] = React.useState(false);
-    const handleClick = () => 
-    {
-        setShow(!show);
-        console.log(props.user);
-    }
+    const [testvend,settestvend] = React.useState(true);
+
 
     
   return (
-    <motion.div className="butcomp" onClick={handleClick}>
-        {!testvend&&<div className='test_drive' >
-            <h1 className='testh1'>Test Drive</h1>
-        </div>}
-        {testvend&&<div className='Vendido' >
-            <h1 className='vendidoh1'>Vendido</h1>
-        </div>}
-        {show && <div className='base'>
-            <div className='seta_test' onClick={handleClick}>
+    <motion.div className="butcomp" >
+        <div className='base'>
+            <div className='seta_test' onClick={() => {props.setTest(false)}}>
                 <Icon icon="akar-icons:arrow-left"  height="25"/>
             </div>
-            <div className='contactar'>Contactar agente</div>
-                <div className='maisinfo'>Mensagem para agente: Antónia Rocha</div>
-                    <div className='linha1'></div>
+            <div className='contactar'>Contact agent</div>
+                <div className='maisinfo'>Message to agent: Antónia Rocha</div>
+                    {/* <div className='linha1'></div> */}
                         <div className='textocomprar'>
-                            Boa tarde, Tenho interesse em fazer o teste drive deste veiculo, por favor, contacte-me.
+                            Hello there! I interest in doing a test drive of this car. Please reach back to me.
                         </div>
-                        <div className='enviadopor'>Enviado por: João Lemos</div>
+                        <div className='enviadopor'>Sent by: João Lemos</div>
                         <div className='email'>Email: joao.lemos@email.com</div>
-                        <div className='telefone'>Telefone: 913441442</div>
+                        <div className='telefone'>Phone: 913441442</div>
                         <div className='enviar'>
-                            <div className='enviartxt'>Enviar</div>
+                            <div className='enviartxt'>Send</div>
                         </div>
-                <div className='linha2'></div>
-        </div>}
+                {/* <div className='linha2'></div> */}
+        </div>
     </motion.div>
   );
 }
