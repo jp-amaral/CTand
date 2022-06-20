@@ -6,6 +6,7 @@ import {motion, AnimatePresence} from 'framer-motion'
 import Navbar from './Navbar';
 import Buttest from '../pages/Buttest.js';
 import ButComp from '../pages/Butcomp.js';
+import ReportAd from './ReportAd';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -148,7 +149,7 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
             <div onClick={onClickBuy} className='secondButton' style={{backgroundColor:bgcolor, color: user==="admin"? '#ffffff' : ''}}>{secondButtonContent}</div>
             {buy && <ButComp setBuy={setBuy} user={user}/>}
 
-            {/* {reportAd && <ReportAd setReportAd={setReportAd}/>} */}
+            {reportAd && <ReportAd setReportAd={setReportAd}/>}
             
         </motion.div>
     )
