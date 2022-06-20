@@ -290,6 +290,9 @@ function Home(props) {
            <CarDiv trash={false} image={item.imagem} info= {<React.Fragment> {item.marca + " " + item.modelo} <br/> {item.ano} <br/> {item.kms + " km"} <br/> {item.preco + " €"}</React.Fragment>}/>
         </div>
     );
+
+    //useEffect to detect change in closeAd state
+    
     
 
     //Filter cars based on input

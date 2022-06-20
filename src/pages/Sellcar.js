@@ -51,7 +51,7 @@ function SellCar(props){
             mode: 'no-cors',
         }).then(res => {
             console.log(res);
-            navigate('/profile');
+            navigate('/');
         })
     }
 

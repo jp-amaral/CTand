@@ -64,6 +64,7 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
             data.append("brand", carObject.marca);
             data.append("model", carObject.modelo);
             data.append("image", carObject.imagem);
+            console.log(data)
             //send data to server 'http://localhost:5000/api/deletecar'
             fetch('http://localhost:5000/api/deletecar', {
                 method: 'POST',
@@ -84,7 +85,9 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
             setBuy(true);
         } else if (user === "admin") {
             setReportAd(true);
-        } else {
+        } else if (user === "agent") {
+            alert("Invoice generated");
+        }   else {
             navigate('/login');
         }
     }

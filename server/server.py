@@ -36,9 +36,16 @@ def sellcar():
     #import the data from the request and save it to the database
     with open('./database/cars.json') as json_file:
         cars = json.load(json_file)
-        print(len(cars))
+        last_id = 1
+        for car in cars:
+            if int(car) > last_id:
+                last_id = int(car)
+
+        new_car_key = last_id + 1
+
+
         #add to the end of json cars file data from the request
-        cars.update({len(cars)+1 : {"marca": data['brand'], "modelo": data['model'], "ano": data['year'], "preco": data['price'], "kms" : data['kms'], "imagem": filename}})
+        cars.update({new_car_key+1 : {"marca": data['brand'], "modelo": data['model'], "ano": data['year'], "preco": data['price'], "kms" : data['kms'], "imagem": filename}})
         print("added car to database")
         with open('./database/cars.json', 'w') as outfile:
             json.dump(cars, outfile)
@@ -47,8 +54,15 @@ def sellcar():
     #do the same but also for the profile_cars.json file
     with open('./database/profile_cars.json') as json_file:
         profile_cars = json.load(json_file)
-        print(len(profile_cars))
-        profile_cars.update({len(profile_cars)+1 : {"marca": data['brand'], "modelo": data['model'], "ano": data['year'], "preco": data['price'], "kms" : data['kms'], "imagem": filename}})
+        
+        last_id = 1
+        for car in profile_cars:
+            if int(car) > last_id:
+                last_id = int(car)
+
+        new_car_key = last_id + 1
+
+        profile_cars.update({new_car_key+1 : {"marca": data['brand'], "modelo": data['model'], "ano": data['year'], "preco": data['price'], "kms" : data['kms'], "imagem": filename}})
         print("added car to profile_cars database")
         with open('./database/profile_cars.json', 'w') as outfile:
             json.dump(profile_cars, outfile)
@@ -57,8 +71,14 @@ def sellcar():
     #do the same but also for the agent_cars.json file
     with open('./database/agent_cars.json') as json_file:
         agent_cars = json.load(json_file)
-        print(len(agent_cars))
-        agent_cars.update({len(agent_cars)+1 : {"marca": data['brand'], "modelo": data['model'], "ano": data['year'], "preco": data['price'], "kms" : data['kms'], "imagem": filename}})
+        
+        last_id = 1
+        for car in agent_cars:
+            if int(car) > last_id:
+                last_id = int(car)
+
+        new_car_key = last_id + 1
+        agent_cars.update({new_car_key+1 : {"marca": data['brand'], "modelo": data['model'], "ano": data['year'], "preco": data['price'], "kms" : data['kms'], "imagem": filename}})
         print("added car to agent_cars database")
         with open('./database/agent_cars.json', 'w') as outfile:
             json.dump(agent_cars, outfile)
