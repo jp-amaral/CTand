@@ -19,9 +19,7 @@ function Buttest(props) {
                         <div className='enviadopor'>Sent by: João Lemos</div>
                         <div className='email'>Email: joao.lemos@email.com</div>
                         <div className='telefone'>Phone: 913441442</div>
-                        <div className='enviar'>
-                            <div className='enviartxt' onClick={() => props.setTest(false)}>Send</div>
-                        </div>
+                        <div className='enviar' onClick={() => props.setTest(false)}>Send</div>
                 {/* <div className='linha2'></div> */}
         </div>
     </motion.div>

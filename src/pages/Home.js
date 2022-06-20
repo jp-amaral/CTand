@@ -32,7 +32,7 @@ function Home(props) {
     , [props.user]);
 
     const years = [
-        { label: 'Ano', value: 'Year' },
+        { label: 'Year', value: 'Year' },
         { label: '2022', value: '2022' },
         { label: '2021', value: '2021' },
         { label: '2020', value: '2020' },
@@ -65,7 +65,7 @@ function Home(props) {
       ];
 
     const prices = [
-        { label: 'Preço', value: [-1, -1] },
+        { label: 'Price', value: [-1, -1] },
         { label: '< 5000€', value: [0, 5000] },
         { label: '5000-10000€', value: [5000, 10000] },
         { label: '10000-15000€', value: [10000, 15000] },
