@@ -14,6 +14,7 @@ function AgentPage({loggedIn, setLoggedIn, setUser,user}) {
 
     const [cars, setCars] = useState([]);
     useEffect(() => {
+        console.log(user);
         fetch("http://localhost:5000/api/agent_cars")
         .then(res => res.json())
         .then(data => setCars(data))

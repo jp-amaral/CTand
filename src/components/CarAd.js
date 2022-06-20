@@ -21,7 +21,7 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
     const [secondButtonContent, setSecondButtonContent] = useState("");
 
     useEffect(() => {
-        console.log(user)
+        console.log("user:" + user)
         if (user === "user") {
             setFirstButtonContent("Test Drive");
             setSecondButtonContent("Buy");
@@ -54,13 +54,31 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
     //onclick function to setTest to true
     const onClickTest = () => {
         if (user === "user" || user === "seller") {
+
             setTest(true);
+        } else if (user === "agent"){
+            console.log("car sold");
+            //add to variable data the carObject.marca, carObject.modelo and carObject.imagem
+            const data = new FormData();
+            data.append("brand", carObject.marca);
+            data.append("model", carObject.modelo);
+            data.append("image", carObject.imagem);
+            //send data to server 'http://localhost:5000/api/deletecar'
+            fetch('http://localhost:5000/api/deletecar', {
+                method: 'POST',
+                body: data,
+                mode: 'no-cors',
+            }).then(res => {
+                console.log(res);
+                window.location.reload(false);
+            })
         } else {
             navigate('/login');
         }
     }
     //onclick function to setBuy to true
     const onClickBuy = () => {
+        console.log("clicked")
         if (user === "user" || user === "seller") {
             setBuy(true);
         } else if (user === "admin") {

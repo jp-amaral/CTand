@@ -66,6 +66,56 @@ def sellcar():
 
     return jsonify({"success": True})
 
+@app.route('/api/deletecar', methods=['POST'])
+def deletecar():
+    #get the data from the request
+    data = request.form
+    print(data)
+
+    #import the data from the request and delete it from the database
+    with open('./database/cars.json') as json_file:
+        cars = json.load(json_file)
+        
+        #delete the car from the database based on the name, model and image name
+        for car in cars:
+            if cars[car]['marca'] == data['brand'] and cars[car]['modelo'] == data['model'] and cars[car]['imagem'] == data['image']:
+                del cars[car]
+                print("deleted car from database")
+                with open('./database/cars.json', 'w') as outfile:
+                    json.dump(cars, outfile)
+                    print("saved database")
+                break
+
+    #do the same but also for the profile_cars.json file
+    with open('./database/profile_cars.json') as json_file:
+        profile_cars = json.load(json_file)
+        print(len(profile_cars))
+        #delete the car from the database based on the name, model and image name
+        for car in profile_cars:
+            if profile_cars[car]['marca'] == data['brand'] and profile_cars[car]['modelo'] == data['model'] and profile_cars[car]['imagem'] == data['image']:
+                del profile_cars[car]
+                print("deleted car from profile_cars database")
+                with open('./database/profile_cars.json', 'w') as outfile:
+                    json.dump(profile_cars, outfile)
+                    print("saved profile_cars database")
+                break
+
+    #do the same but also for the agent_cars.json file
+    with open('./database/agent_cars.json') as json_file:
+        agent_cars = json.load(json_file)
+        print(len(agent_cars))
+        #delete the car from the database based on the name, model and image name
+        for car in agent_cars:
+            if agent_cars[car]['marca'] == data['brand'] and agent_cars[car]['modelo'] == data['model'] and agent_cars[car]['imagem'] == data['image']:
+                del agent_cars[car]
+                print("deleted car from agent_cars database")
+                with open('./database/agent_cars.json', 'w') as outfile:
+                    json.dump(agent_cars, outfile)
+                    print("saved agent_cars database")
+                break
+
+    return jsonify({"success": True})
+
 @app.route('/api/profile_cars', methods=['GET'])
 def profile_cars():
     with open('./database/profile_cars.json') as json_file:
