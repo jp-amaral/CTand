@@ -2,21 +2,15 @@ import React from "react";
 import './Buttest.css'
 import { Icon } from '@iconify/react';
 import {motion, AnimatePresence} from 'framer-motion'
-function ButComp() {
+function ButComp(props) {
     const [show, setShow] = React.useState(false);
     const [compgera,setcompgera] = React.useState(true);
 
     const handleClick = () => setShow(!show);
   return (
-    <motion.div className="butcomp" onClick={handleClick}>
-        {compgera&&<div className='buy' >
-            <h1 className='testh1'>Comprar</h1>
-        </div>}
-        {!compgera&&<div className='buy' >
-            <h1 className='testh1'>Gerar Fatura</h1>
-        </div>}
-        {show && <div className='base'>
-            <div className='seta_test' onClick={handleClick}>
+    <motion.div className="butcomp">
+        <div className='base'>
+            <div className='seta_test' onClick={() => props.setBuy(false)}>
                 <Icon icon="akar-icons:arrow-left"  height="25"/>
             </div>
             <div className='contactar'>Contactar agente</div>
@@ -32,7 +26,7 @@ function ButComp() {
                             <div className='enviartxt'>Enviar</div>
                         </div>
                 <div className='linha2'></div>
-        </div>}
+        </div>
     </motion.div>
   );
 }

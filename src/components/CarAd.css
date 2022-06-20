@@ -94,6 +94,30 @@ border-radius: 30px;
 cursor: pointer;
 }
 
+.secondButton{
+    position: absolute;
+width: 19.7vw;
+height: 5vh;
+top : 1.5vh;
+left: 72vw;
+justify-content: center;
+
+font-family: 'Roboto Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 40px;
+display: flex;
+align-items: center;
+text-align: center;
+cursor: pointer;
+color: #640064;
+background-color: #FFFFFF;
+box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.1);
+border-radius: 30px;
+cursor: pointer;
+}
+
 .left-container{
     position: relative;
     top: 8vh;

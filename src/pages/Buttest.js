@@ -16,14 +16,8 @@ function Buttest(props) {
     
   return (
     <motion.div className="butcomp" onClick={handleClick}>
-        {!testvend&&<div className='test_drive' >
-            <h1 className='testh1'>Test Drive</h1>
-        </div>}
-        {testvend&&<div className='Vendido' >
-            <h1 className='vendidoh1'>Vendido</h1>
-        </div>}
-        {show && <div className='base'>
-            <div className='seta_test' onClick={handleClick}>
+        <div className='base'>
+            <div className='seta_test' onClick={() => props.setTest(false)}>
                 <Icon icon="akar-icons:arrow-left"  height="25"/>
             </div>
             <div className='contactar'>Contactar agente</div>
@@ -39,7 +33,7 @@ function Buttest(props) {
                             <div className='enviartxt'>Enviar</div>
                         </div>
                 <div className='linha2'></div>
-        </div>}
+        </div>
     </motion.div>
   );
 }

@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home user={user} loggedIn={loggedIn}/>} />
           <Route exact path="/login" element={<Login setUser={setUser} setLoggedIn={setLoggedIn}/>} />
-          <Route exact path="/profile" element={<Profile user={user} setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>} />
+          <Route exact path="/profile" element={<Profile user={user}  setUser={setUser} setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>} />
           <Route exact path="/Sellcar" element={<Sellcar loggedIn={loggedIn} user={user}/>} />
           <Route exact path="/agent" element={<AgentPage setUser={setUser} loggedIn={loggedIn} user={user} setLoggedIn={setLoggedIn}/>} />
         </Routes>

@@ -74,6 +74,7 @@ function Profile (props){
     const handleLogout = (e) => {
         e.preventDefault();
         props.setLoggedIn(false);
+        props.setUser("")
         // redirect to /profile using Navigate 
         navigate(`/`);
     }

@@ -6,23 +6,33 @@ import {motion, AnimatePresence} from 'framer-motion'
 import Navbar from './Navbar';
 import Buttest from '../pages/Buttest.js';
 import ButComp from '../pages/Butcomp.js';
+import { useNavigate } from 'react-router-dom';
 
 
 function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
 
+    let navigate = useNavigate();
+
     const [test, setTest] = useState(false);
+    const [buy , setBuy] = useState(false);
+    const[reportAd, setReportAd] = useState(false);
     const [firstButtonContent, setFirstButtonContent] = useState("");
+    const [secondButtonContent, setSecondButtonContent] = useState("");
 
     useEffect(() => {
         console.log(user)
         if (user === "user") {
-            setFirstButtonContent("Buy");
+            setFirstButtonContent("Test Drive");
+            setSecondButtonContent("Buy");
         } else if (user === "admin") {
             setFirstButtonContent("Delete seller account");
+            setSecondButtonContent("Delete ad");
         } else if (user === "agent") {
             setFirstButtonContent("Car sold");
+            setSecondButtonContent("Genterate invoice");
         } else {
-            setFirstButtonContent("Buy");
+            setFirstButtonContent("Test Drive");
+            setSecondButtonContent("Buy");
         }
     }  , [user]);
 
@@ -38,7 +48,21 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
 
     //onclick function to setTest to true
     const onClickTest = () => {
-        setTest(true);
+        if (user === "user" || user === "seller") {
+            setTest(true);
+        } else {
+            navigate('/login');
+        }
+    }
+    //onclick function to setBuy to true
+    const onClickBuy = () => {
+        if (user === "user" || user === "seller") {
+            setBuy(true);
+        } else if (user === "admin") {
+            setReportAd(true);
+        } else {
+            navigate('/login');
+        }
     }
 
 
@@ -113,9 +137,13 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
                     <img className="stand-image" src={require('../images/stand_location.png')}/>
                 </div>
             </div>
-            <ButComp/>
+            
             <div onClick={onClickTest} className='firstButton'>{firstButtonContent}</div>
             {test && <Buttest setTest={setTest}/>}
+            <div onClick={onClickBuy} className='secondButton'>{secondButtonContent}</div>
+            {buy && <ButComp setBuy={setBuy}/>}
+
+            {/* {reportAd && <ReportAd setReportAd={setReportAd}/>} */}
             
         </motion.div>
     )
