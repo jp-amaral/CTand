@@ -196,3 +196,10 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  .trash{
+    position: absolute;
+    right: 1vw;
+    top: 21vh;
+    cursor: pointer;
+  }

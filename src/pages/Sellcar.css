@@ -456,7 +456,7 @@ input[type=Submit]:hover{
     height: 60px;
 }
 
-.btn_sub_div{
+/* .btn_sub_div{
     margin-top: 20px;
     padding: 8px 2px;
     background-color: #640064;
@@ -465,12 +465,14 @@ input[type=Submit]:hover{
     text-decoration: none;
     color: white;
     align-items: center;
+    width: 10vw;
+    height: 15vh;
     
-}
-.btn_sub_div:hover{
+} */
+/* .btn_sub_div:hover{
     background-color: #360136;
     cursor: pointer;
-}
+} */
 
 .btn_sub{
     position: relative;
