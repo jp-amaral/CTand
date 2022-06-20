@@ -102,7 +102,7 @@ function Profile (props){
     var filteredCars = array;
     const listCars = filteredCars.map((item, key) =>
         <div className="car" onClick={() => divOnClick(item.marca, item.modelo, item.ano)} key={key}>
-           <CarDiv trash={true}image={item.imagem} info= {<React.Fragment> {item.marca + " " + item.modelo} <br/> {item.ano} <br/> {item.kms + " km"} <br/> {item.preco + " €"}</React.Fragment>}/>
+           <CarDiv trash={false} image={item.imagem} info= {<React.Fragment> {item.marca + " " + item.modelo} <br/> {item.ano} <br/> {item.kms + " km"} <br/> {item.preco + " €"}</React.Fragment>}/>
         </div>
     );
 

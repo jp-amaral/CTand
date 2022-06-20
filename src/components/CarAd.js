@@ -28,7 +28,7 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
             setSecondButtonContent("Buy");
             setBgcolor("#fffff");
         } else if (user === "admin") {
-            setFirstButtonContent("Delete seller account");
+            // setFirstButtonContent("Delete seller account");
             setSecondButtonContent("Delete ad");
             setBgcolor("#FF5D5D");
         } else if (user === "agent") {
@@ -162,12 +162,12 @@ function CarAd({closeAd, visible, opacity, transition, carObject, user}) {
                 </div>
             </div>
             
-            <div onClick={onClickTest} className='firstButton' style={{backgroundColor:bgcolor, color: user==="admin"? '#ffffff' : ''}} >{firstButtonContent}</div>
-            {test && <Buttest setTest={setTest} user={user}/>}
+            {user !== "admin" && <div onClick={onClickTest} className='firstButton' style={{backgroundColor:bgcolor, color: user==="admin"? '#ffffff' : ''}} >{firstButtonContent}</div>}
+            {test  && <Buttest setTest={setTest} user={user}/>}
             <div onClick={onClickBuy} className='secondButton' style={{backgroundColor:bgcolor, color: user==="admin"? '#ffffff' : ''}}>{secondButtonContent}</div>
             {buy && <ButComp setBuy={setBuy} user={user}/>}
 
-            {reportAd && <ReportAd setReportAd={setReportAd}/>}
+            {reportAd && <ReportAd setReportAd={setReportAd} carObject= {carObject}/>}
             
         </motion.div>
     )
