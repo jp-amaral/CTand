@@ -14,7 +14,7 @@ function ButComp(props) {
                 <Icon icon="akar-icons:arrow-left"  height="25"/>
             </div>
             <div className='contactar'>Contact agent</div>
-                <div className='maisinfo'>Message to agent: Antónia Rocha</div>
+                <div className='maisinfo'>Message to agent: Pedro Viegas</div>
                     {/* <div className='linha1'></div> */}
                         <div className='textocomprar'>
                             Hello there, I am interested in buying this nice car, please contact me.
