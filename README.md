@@ -1,9 +1,9 @@
-Equipa: P303
-Membros: 
-  ->  *João Amaral 98373*
-  ->  *João Viegas 98372*
-  ->  *Bruno Lemos 98221*
-  ->  *Pedro Rocha 98256*
+Equipa: P303 </br>
+Membros: </br>
+  ->  *João Amaral 98373* </br>
+  ->  *João Viegas 98372* </br>
+  ->  *Bruno Lemos 98221* </br>
+  ->  *Pedro Rocha 98256* </br>
 
 Github: https://github.com/jp-amaral/CTand
 
