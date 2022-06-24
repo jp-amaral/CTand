@@ -12,7 +12,7 @@ Link para a aplicação:
   
 -----------
 **Processo para aceder às contas da plataforma** </br>
-utilizador comum (comprador): username:user, pass:user </br>
-vendedor: username:seller, pass:seller </br>
-agente: username:agent, pass:agent </br>
-moderador: username:admin, pass:admin </br>
+utilizador comum (comprador):   **username**:user, **pass**:user </br>
+vendedor: **username**:seller, **pass**:seller </br>
+agente: **username**:agent, **pass**:agent </br>
+moderador: **username**:admin, **pass**:admin </br>
